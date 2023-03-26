@@ -19,4 +19,6 @@ public class Size {
     private String name;
     @Column(name = "price")
     private double price;
+    @Column(name = "is_default")
+    private boolean isDefault;
 }

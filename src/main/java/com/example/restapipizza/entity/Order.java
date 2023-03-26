@@ -25,17 +25,14 @@ public class Order {
     private User user;
     @Column(name = "user_phone")
     private String phone;
-    @OneToMany(fetch = FetchType.EAGER,
-    cascade = CascadeType.ALL,
-    mappedBy = "order")
-    private List<OrderItem> items = new ArrayList<>();
+//    @OneToMany(fetch = FetchType.EAGER,
+//    cascade = CascadeType.REFRESH,
+//    mappedBy = "order")
+//    private List<OrderItem> items = new ArrayList<>();
     @Column(name = "price")
     private double price;
 
     @Column(name = "status")
     private String status;
 
-    public void addItem(OrderItem item){
-        items.add(item);
-    }
 }

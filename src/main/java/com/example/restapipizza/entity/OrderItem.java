@@ -18,6 +18,7 @@ import java.util.Set;
 public class OrderItem {
     @Id
     @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @ManyToOne
     @JoinColumn(name = "pizza_id")
@@ -25,10 +26,10 @@ public class OrderItem {
     @ManyToOne
     @JoinColumn(name = "size_id")
     private Size size;
-    @ManyToOne(cascade = CascadeType.REFRESH)
+    @ManyToOne//(cascade = {CascadeType.REFRESH, CascadeType.PERSIST})
     @JoinColumn(name = "order_id")
     private Order order;
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
     @JoinTable(name = "items_additives",
     joinColumns = @JoinColumn(name = "item_id"),
     inverseJoinColumns = @JoinColumn(name = "additives_id"))

@@ -2,6 +2,7 @@ package com.example.restapipizza.service;
 
 import com.example.restapipizza.entity.Order;
 import com.example.restapipizza.entity.OrderItem;
+import com.example.restapipizza.repository.OrderItemRepository;
 import com.example.restapipizza.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,6 +12,7 @@ import java.util.List;
 public class OrderServiceImpl implements OrderService{
     @Autowired
     private OrderRepository orderRepository;
+    private OrderItemRepository orderItemRepository;
     @Override
     public List<Order> getAllOrders() {
         return orderRepository.findAll();

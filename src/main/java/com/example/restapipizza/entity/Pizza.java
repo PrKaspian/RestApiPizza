@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.sql.Blob;
+
 @Entity
 @Table(name = "pizzas")
 @Data
@@ -23,4 +25,6 @@ public class Pizza {
     private String composition;
     @Column(name = "is_actual")
     private boolean isActual;
+    @Column(name = "image")
+    private String image;
 }
