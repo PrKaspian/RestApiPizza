@@ -1,0 +1,65 @@
+create table pizzas(
+                       id int primary key not null auto_increment,
+                       name varchar(30) not null ,
+                       price double not null ,
+                       composition varchar(50) not null ,
+                       is_actual boolean not null,
+                       image varchar(50)
+);
+
+
+
+
+create table pizza_additives(
+                                id int primary key not null auto_increment,
+                                name varchar(20) not null ,
+                                price double not null,
+                                is_actual boolean not null
+);
+
+create table users(
+                      id int primary key not null auto_increment,
+                      name varchar(20) not null,
+                      phone varchar(13) not null ,
+                      password varchar(40) not null ,
+                      is_admin boolean not null
+);
+
+
+create table orders(
+                       id int primary key not null auto_increment,
+                       user_id int,
+                       user_phone varchar(13),
+                       price double not null,
+                       status varchar(20),
+                       foreign key (user_id) references users (id)
+);
+
+create table pizza_sizes(
+                            id int primary key not null auto_increment,
+                            name varchar(20) not null ,
+                            price double not null,
+                            is_default boolean
+);
+
+create table order_items(
+                            id int primary key not null auto_increment,
+                            pizza_id int,
+                            size_id int,
+                            order_id int,
+                            additives_id int,
+                            foreign key (pizza_id) references pizzas (id),
+                            foreign key (size_id) references pizza_sizes (id),
+                            foreign key (order_id) references orders (id)
+
+);
+
+
+
+
+
+create table items_additives(
+                                item_id int REFERENCES order_items (id),
+                                additives_id int REFERENCES pizza_additives(id),
+                                CONSTRAINT items_additives_pk PRIMARY KEY (item_id, additives_id)
+);
