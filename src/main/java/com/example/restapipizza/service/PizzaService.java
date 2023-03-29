@@ -6,7 +6,6 @@ import java.util.List;
 
 public interface PizzaService {
     List<Pizza> getAllPizza();
-   // List<Pizza> getAllPizzaByActual();
     Pizza saveOrUpdate(Pizza pizza);
     Pizza getPizzaById(int id);
     Pizza deletePizzaById(int id);

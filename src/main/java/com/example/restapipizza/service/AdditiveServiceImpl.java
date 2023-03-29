@@ -25,10 +25,7 @@ public class AdditiveServiceImpl implements AdditiveService{
         return additiveRepository.findById(id).orElse(null);
     }
 
-//    @Override
-//    public List<Additive> getAllAdditiveByActual(boolean val) {
-//        return additiveRepository.findAdditivesByActualTrue(val);
-//    }
+
 
 
 }

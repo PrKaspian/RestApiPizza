@@ -9,5 +9,5 @@ public interface OrderItemService {
     List<OrderItem>getAllOrderItemsByOrderId(int id);
     OrderItem saveOrUpdate(OrderItem orderItem);
     OrderItem getItemById(int id);
-    //List<OrderItem> saveAllOrderItem(List<OrderItem> orderItems);
+
 }

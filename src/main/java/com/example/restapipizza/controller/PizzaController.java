@@ -18,10 +18,7 @@ public class PizzaController {
         return service.getAllPizza();
     }
 
-//    @GetMapping("/actual")
-//    public List<Pizza> getAllByActual(){
-//        return service.getAllPizzaByActual();
-//    }
+
 
     @GetMapping("/{id}")
     public Pizza getById(@PathVariable("id") int id){

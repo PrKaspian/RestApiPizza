@@ -28,11 +28,6 @@ public class OrderItemController {
         return service.getAllOrderItemsByOrderId(id);
     }
 
-//    @PostMapping
-//    public List<OrderItem> add(@RequestBody List<OrderItem> items){
-//        return service.saveAllOrderItem(items);
-//    }
-
     @PostMapping
     public OrderItem add(@RequestBody OrderItem item){
         return service.saveOrUpdate(item);

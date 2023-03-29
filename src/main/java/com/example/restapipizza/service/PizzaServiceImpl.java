@@ -16,10 +16,7 @@ public class PizzaServiceImpl implements PizzaService{
         return pizzaRepository.findAll();
     }
 
-//    @Override
-//    public List<Pizza> getAllPizzaByActual() {
-//        return pizzaRepository.findPizzasByActualIsTrue();
-//    }
+
 
     @Override
     public Pizza saveOrUpdate(Pizza pizza) {

@@ -23,10 +23,7 @@ public class AdditiveController {
         return service.getAdditiveById(id);
     }
 
-//    @GetMapping("/actual")
-//    public List<Additive> getAllByActual(){
-//        return service.getAllAdditiveByActual(true);
-//    }
+
 
     @PostMapping
     public Additive add(@RequestBody Additive additive){

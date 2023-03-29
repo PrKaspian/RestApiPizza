@@ -8,5 +8,5 @@ public interface AdditiveService {
     List<Additive>getAllAdditives();
     Additive saveOrUpdate(Additive additive);
     Additive getAdditiveById(int id);
-//    List<Additive> getAllAdditiveByActual(boolean val);
+
 }
